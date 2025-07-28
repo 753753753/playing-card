@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import ScoreTable from "./ScoreTable";
 import Result from "./Result";
+import InfoModal from "./InfoModal"; // ✅ Import the modal
 
 const GameBoard = ({ players }) => {
   const [round, setRound] = useState(1);
   const [scores, setScores] = useState([]);
   const [hands, setHands] = useState(["", "", "", ""]);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showModal, setShowModal] = useState(false); // ✅ Modal state
 
   useEffect(() => {
     const saved = localStorage.getItem("callbreak_game");
@@ -67,24 +69,20 @@ const GameBoard = ({ players }) => {
 
   return (
     <div className="relative min-h-screen font-sans">
-      {/* 🌌 Background for Mobile */}
+      {/* 🌌 Backgrounds */}
       <div className="sm:hidden absolute inset-0 z-0">
-        <img
-          src="/bg1.jpg"
-          alt="Mobile Background"
-          className="w-full h-full object-cover opacity-80"
-        />
+        <img src="/bg1.jpg" alt="Mobile Background" className="w-full h-full object-cover opacity-80" />
+      </div>
+      <div className="hidden sm:block absolute inset-0 z-0">
+        <img src="/bg2.jpg" alt="Desktop Background" className="w-full h-full object-cover opacity-90" />
       </div>
 
-      {/* 💻 Background for Desktop/Laptop */}
-      <div className="hidden sm:block absolute inset-0 z-0">
-        <img
-          src="/bg2.jpg"
-          alt="Desktop Background"
-          className="w-full h-full object-cover opacity-90"
-        />
+      {/* 📱 Hamburger Icon */}
+      <div className="absolute top-4 right-4 z-20">
+        <button onClick={() => setShowModal(true)} className="text-white text-3xl focus:outline-none">
+          ☰
+        </button>
       </div>
-      
 
       {/* 🎮 Game Content */}
       <div className="relative z-10 p-3 sm:p-6 min-h-screen text-white bg-transparent bg-opacity-70">
@@ -138,6 +136,9 @@ const GameBoard = ({ players }) => {
           <ScoreTable players={players} scores={scores} />
         </div>
       </div>
+
+      {/* 📘 Modal */}
+      {showModal && <InfoModal onClose={() => setShowModal(false)} />}
     </div>
   );
 };
