@@ -8,14 +8,14 @@ const InfoModal = ({ onClose }) => {
       >
         {/* ❌ Close Button */}
         <button
-          className="absolute top-2 right-2 text-gray-700 hover:text-black text-xl"
+          className="absolute top-9 right-2 text-gray-700 hover:text-black text-xl"
           onClick={onClose}
         >
           ✖
         </button>
 
         {/* 🃏 Card Viewer */}
-        <h3 className="font-semibold mb-2 text-center">🃏 All 52 Cards</h3>
+        <h3 className="font-semibold mb-4 text-center ">🃏 All 52 Cards</h3>
         <CardDisplay />
 
         {/* ✅ Close Button at Bottom */}
