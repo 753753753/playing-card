@@ -39,7 +39,7 @@ const PlayerInput = ({ onStart }) => {
 
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center gap-5 p-6 sm:p-8 bg-white/10 backdrop-blur-md rounded-xl shadow-2xl border border-white/20 w-[90%] max-w-md">
-          <h1 className="text-3xl sm:text-4xl font-bold text-white text-center">
+          <h1 className="text-3xl sm:text-2xl font-bold text-white text-center">
             Welcome to the Game
           </h1>
           <p className="text-base sm:text-lg text-gray-200 mb-2 text-center">
