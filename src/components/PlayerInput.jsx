@@ -72,18 +72,16 @@ const PlayerInput = ({ onStart }) => {
         style={{ backgroundImage: `url('/bg1.jpg')` }}
       >
         {/* Overlay */}
-        <div className="realtive inset-0 bg-black bg-opacity-60 z-0"></div>
+        <div className="realtive inset-0 bg-black bg-opacity-50 z-0"></div>
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col items-center gap-5 p-6 bg-white/10 rounded-xl shadow-2xl border border-white/20 w-[90%] max-w-md">
+        <div className="relative z-10 flex flex-col items-center gap-5 p-6 bg-white/40 rounded-xl shadow-2xl border border-white/20 w-[90%] max-w-md">
           <h1 className="text-2xl sm:text-3xl font-bold text-cyan-800 text-center">
             Welcome to the Game
           </h1>
           <p className="text-base sm:text-lg  text-cyan-700 mb-2 text-center">
             Enter Player Names to Start
           </p>
-
-
           {names.map((name, index) => (
             <input
               key={index}
