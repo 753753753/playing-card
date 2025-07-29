@@ -34,9 +34,16 @@ const ScoreTable = ({ players, scores }) => {
               </td>
               {sortedHeader.map((name, j) => {
                 const originalIndex = players.indexOf(name);
+                const score = row[originalIndex];
                 return (
                   <td key={j} className="border border-green-700 px-3 py-2">
-                    {row[originalIndex]}
+                    {score < 0 ? (
+                      <span className="inline-flex items-center justify-center min-w-[24px] min-h-[24px] px-2 rounded-full border border-red-500 bg-red-600 text-white font-bold text-xs">
+                        {score}
+                      </span>
+                    ) : (
+                      score
+                    )}
                   </td>
                 );
               })}

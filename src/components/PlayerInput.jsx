@@ -75,7 +75,7 @@ const PlayerInput = ({ onStart }) => {
         <div className="realtive inset-0 bg-black bg-opacity-50 z-0"></div>
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col items-center gap-5 p-6 bg-white/40 rounded-xl shadow-2xl border border-white/20 w-[90%] max-w-md">
+        <div className="relative z-10 flex flex-col items-center gap-5 p-6 bg-white/10 backdrop-blur-md rounded-xl shadow-2xl border border-white/20 w-[90%] max-w-md">
           <h1 className="text-2xl sm:text-3xl font-bold text-cyan-800 text-center">
             Welcome to the Game
           </h1>
